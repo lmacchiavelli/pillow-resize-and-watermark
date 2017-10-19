@@ -52,9 +52,6 @@ def croppa_immagine(imgSpec,nome):
     if imgSpec[4]:
         watermark = Image.open('filigrana.png')
         img.paste(watermark, (10, 10), watermark)
-    ##photo = Image.open('original_photo.jpg')
-    ##watermark = Image.open('watermark.png')
-    ##photo.paste(watermark, (25, 25), watermark)
 
 
     salva(img,nome+imgSpec[3])
