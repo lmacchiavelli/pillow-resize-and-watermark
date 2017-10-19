@@ -21,16 +21,16 @@ import glob, os
 
 
 def croppa_immagine(imgSpec,nome):
-    """ 
-    Accetta una Tupla con queste impostazioni es:
-    (230, 200,"fiori1.jpg","-immagine-media",True) tradotta:
-    (width finale, height finale, "url immagine sorgente", "prefisso da
-    aggiungere al nome finale dell'immagine ad esempio -big", Watermark true false)
-    per dimensionare l'immagine
-    l'immagine originale viene portata all'altezza dell'immagine
-    risultante secondo questa formula :
-    NewHeight = original width / original height * new width
-    poi viene croppata portandosi al centro calcolando l'offset
+    """
+    Accept a Tupla with these settings eg:
+    (230, 200, "fiori1.jpg", "- image-media", True) translated:
+    (final width, final height, "source image url", "prefix by
+    add to the final image name such as -big ", Watermark true false)
+    to dimension the image
+    the original image is brought to the height of the image
+    resulting from this formula:
+    NewHeight = original width / height height * new width
+    then it is cropped by moving to the center by calculating the offset
 
     """
     #Apertura
