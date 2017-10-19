@@ -1,0 +1,1 @@
+# pillow-resize-and-watermark
