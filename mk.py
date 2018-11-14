@@ -33,22 +33,22 @@ def croppa_immagine(imgSpec,nome):
     then it is cropped by moving to the center by calculating the offset
 
     """
-    #Apertura
+    #Opening the file
     im        = Image.open(imgSpec[2])
     newsH     = im.size[0] / im.size[1] * imgSpec[0]
     img       = im.resize((int(newsH),imgSpec[0]))
-    #Calcolo Offset
+    #calculate the offset
     imgCenter = img.size[0] / 2
     resCenter =  imgSpec[0] / 2
     offset    =   imgCenter - resCenter
-    #Assegno a una tupla
+    #Assign a tuple
     imgResult = (int(offset),0,int(imgSpec[0]+offset),imgSpec[1])
-    #Applico il crop all'immagine
+    #Apply IMG Crop
     img = img.crop(imgResult)
-    #Salvo il file
+    #File saving
     
 
-    #APPLICO WATERMARK
+    #APPLY WATERMARK
     if imgSpec[4]:
         watermark = Image.open('filigrana.png')
         img.paste(watermark, (10, 10), watermark)
@@ -62,17 +62,12 @@ def salva(imgObject,nome):
 
 imnews = 230, 200,"fiori1.jpg","fiori-colorati-tulipani"
 
-dimensioni = [
+image_to_crop_and_optimize = [
     ( 230 , 200 , "fiori1.jpg" , "-medium"     , True  ),
     ( 220 , 100 , "fiori1.jpg" , "-mini"       , False ),
     ( 400 , 400 , "fiori1.jpg" , "-big-square" , True  ),
     ( 60  ,  60 , "fiori1.jpg" , "-mini"       , False ),
 ]
 
-
-#croppa_immagine(imnews)
-
-for i in dimensioni:
+for i in image_to_crop_and_optimize:
     croppa_immagine(i,"fiori-coloratissimi")
-
-
